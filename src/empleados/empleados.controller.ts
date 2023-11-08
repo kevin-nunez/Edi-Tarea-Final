@@ -8,7 +8,7 @@ export class EmpleadosController {
 
     @Get()
     getempleados(){
-        return this.servicio.getEmployee();
+        return this.servicio.getEmployees();
     }
 
     @Post()

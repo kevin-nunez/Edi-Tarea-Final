@@ -30,9 +30,12 @@ constructor() {
     }
     this.employees.push(employee);
 }
-getEmployee(){
+getEmployees(){
     return this.employees;
   }
+getEmployee(id: number) {
+    return this.employees.find((e) => e.id == id);
+}
 addEmployee(employeeModel: employeesModel){
     let employee ={
         "id": employeeModel.id,
