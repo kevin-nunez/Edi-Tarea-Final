@@ -7,9 +7,19 @@ export class EmpleadosController {
     constructor(private readonly servicio: employeesService) {}
 
     @Get()
-    getempleados(){
-        return this.servicio.getEmployees();
+  getemployee() {
+    return this.servicio.getEmployees();
+  }
+
+    @Get(':id')
+  getEmpleado(@Param('id') id: number) {
+    const empleado = this.servicio.getEmployee(id);
+    if (empleado) {
+      return empleado;
+    } else {
+      throw new Error('Empleado con ID ${id} no encontrado.');
     }
+  }
 
     @Post()
     addempleados(@Body() empleado: employeesModel){
