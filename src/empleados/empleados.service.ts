@@ -56,14 +56,13 @@ addEmployee(employeeModel: employeesModel){
     }
     return "ingresaste un empeado inexistente"
  }
-
  deleteemployee(id) {
-    if(((id)>0)&&((id)<this.employees.length)){
-    this.employees.splice((id)-1,1)
-    return this.employees
-    }else{
-     return "ingresaste un empeado inexistente"   
+    let empleadoIndex = this.employees.findIndex((e) => e.id == id);
+    if (empleadoIndex !== -1) {
+      this.employees.splice(empleadoIndex, 1);
+      return this.employees;
+    } else {
+      return 'El empleado no existe';
     }
   }
-
 }

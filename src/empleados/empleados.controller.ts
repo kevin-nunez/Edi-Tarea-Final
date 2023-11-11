@@ -7,7 +7,7 @@ export class EmpleadosController {
     constructor(private readonly servicio: employeesService) {}
 
     @Get()
-  getemployee() {
+  getemployees() {
     return this.servicio.getEmployees();
   }
 
